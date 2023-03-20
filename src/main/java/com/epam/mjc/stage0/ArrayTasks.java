@@ -142,7 +142,7 @@ public class ArrayTasks {
                 for (int k = j + 1; k < arr[i].length; k++) {
                     if (arr[i][j] > arr[i][k]) {
                         int temp = arr[i][j];
-                        arr[i][k] = arr[i][j];
+                        arr[i][j] = arr[i][j];
                         arr[i][k] = temp;
 
                     }
@@ -153,5 +153,8 @@ public class ArrayTasks {
 
         }
         return arr;
+
     }
+
 }
+
