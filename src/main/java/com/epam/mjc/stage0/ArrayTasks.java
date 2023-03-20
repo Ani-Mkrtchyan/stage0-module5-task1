@@ -108,11 +108,11 @@ public class ArrayTasks {
         }
         int[] newArr = new int[positiveNumbers];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0){
+            if (arr[i] > 0) {
                 newArr[counter] = arr[i];
-            counter++;
+                counter++;
+            }
         }
-    }
         return newArr;
     }
 
@@ -127,6 +127,31 @@ public class ArrayTasks {
      * arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
     public int[][] sortRaggedArray(int[][] arr) {
-        return null;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i].length > arr[j].length) {
+                    int[] temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                for (int k = j + 1; k < arr[i].length; k++) {
+                    if (arr[i][j] > arr[i][k]) {
+                        int temp = arr[i][j];
+                        arr[i][j] = arr[i][j];
+                        arr[i][k] = temp;
+
+                    }
+
+                }
+
+            }
+
+        }
+        return arr;
     }
 }
